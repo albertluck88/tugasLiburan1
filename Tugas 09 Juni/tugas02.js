@@ -3,8 +3,9 @@ function soal2(param)
 
   var result = []
   for(var i=0; i < param.length; i++){
-    result.push(Object.create({}))  
+    
     if(i === 0){
+      result.push(Object.create({}))  
         if([i][0] === 0){
          result[i].firstName = param[i][0]
           result[i].lastName = param[i][i+1]
@@ -12,6 +13,7 @@ function soal2(param)
           result[i].Profesiion = param[i][i+3]
         }
       }else{
+
           if([i][1] === 1){
             result[i].firstName = param[i][0]
             result[i].lastName = param[i][i+1]
