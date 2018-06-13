@@ -3,38 +3,23 @@ function soal2(param)
 
   var result = []
   for(var i=0; i < param.length; i++){
-    result.push(Object.create({}))
+    result.push(Object.create({}))  
     if(i === 0){
-
-      for(var j = 0; j < param[i].length; j++){
-
-        if([i][j] === 0){
-
-          result[i].firstName = param[i][j]
-          result[i].lastName = param[i][j+1]
-          result[i].Hobbies = param[i][j+2]
-          result[i].Profesiion = param[i][j+3]
- 
-          }
-
+        if([i][0] === 0){
+         result[i].firstName = param[i][0]
+          result[i].lastName = param[i][i+1]
+          result[i].Hobbies = param[i][i+2]
+          result[i].Profesiion = param[i][i+3]
         }
-
       }else{
-        for(var k = 0; k < param[i].length; k++){
-
-          if([i][k] === 1){
-  
-            result[i].firstName = param[i][k]
-            result[i].lastName = param[i][k+1]
-            result[i].Hobbies = param[i][k+2]
-            result[i].Profesiion = param[i][k+3]
+          if([i][1] === 1){
+            result[i].firstName = param[i][0]
+            result[i].lastName = param[i][i+1]
+            result[i].Hobbies = param[i][i+2]
+            result[i].Profesiion = param[i][i+3]
           }
-      }
-
+    
     }
-
-  
-
 
 }
 return result
