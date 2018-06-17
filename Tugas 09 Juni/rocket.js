@@ -1,86 +1,44 @@
 /*
-    soal : 
-    buatlah bendera inggris pada abad pertengahan dan era perang salib 
-    dengan lambang St. George's Cross, 
-    https://id.wikipedia.org/wiki/Bendera_Inggris
-    dengan berbagai ukuran yang ditentukan
-    oleh input. bendera/*
-    soal : 
-    buatlah bendera inggris pada abad pertengahan dan era perang salib 
-    dengan lambang St. George's Cross, 
-    https://id.wikipedia.org/wiki/Bendera_Inggris
-    dengan berbagai ukuran yang ditentukan
-    oleh input. bendera berbentuk persegi .
-    output hanya menggunakan console.log string yang isinya 
-    hanya berupa spasi kosong dan char *
-    petunjuk : 
-    - input harus bernilai ganjil , jika tidak ganjil maka " invalid input "
+    analisa sendiri dengan apa yang diminta soal melalui test case. 
+    wajib menggunakan pseudocode
+    PSEUDOCODE HERE : 
 */
-function benderaInggris(param)
+function soal1(param)
 {
-  var hasilTambah = 0
-  for(var i = 1; i <= param; i++){
-    hasilTambah += i
-  }
+    var groups = []
+    for(var i = 1; i <= param; i++){
 
-
-  var groups = ""
-
-  for(var j = 1; j <= param; j++){
-    group = ""
-    if(j === hasilTambah / param){
-      for(var k = 1; k <= param; k++){
-        group += "*"
+      if(param !== 0){
+      if( i === 1){
+        groups.push("!")
+      }else if( i === 2){
+        groups.push("@")
+      }else if( i === 3){
+        groups.push("#")
+      }else if(groups[i-2] === "#"){
+        groups.push("!")
+      }else if(groups[i-2] === "!"){
+        groups.push("@")
+      }else if(groups[i-2] === "@"){
+        groups.push("#")
       }
-    }else if(param % 2 === 0){
-
-      return "invalid Input"
-
-    }else{
-     for(var l = 1; l <= param; l++){
-       if(l === hasilTambah / param){
-         group += "*"
-       }else{
-         group += " "
-       }
-     }
     }
-    groups +=  group + "\n"
-  }
-
-var hitung = hasilTambah / param
-
-return groups
+    
+    }
+    if(param !== 0){
+    return groups
+    }else{
+      return "INVALID INPUT"
+    }
 }
 
+console.log(soal1(3))
+// output : ['!','@','#']
 
+console.log(soal1(6));
+// output : ['!','@','#','!','@','#']
 
+console.log(soal1(4))
+// output : ['!','@','#','!']
 
-
-console.log(benderaInggris(9))
-
-/*
-    output:
-    '    *    ' // 1
-    '    *    ' // 2
-    '    *    ' // ..
-    '    *    '
-    '*********'
-    '    *    '
-    '    *    '
-    '    *    '
-    '    *    ' // 9
-*/
-
-console.log(benderaInggris(5))
-/*
-    '  *  '
-    '  *  '
-    '*****'
-    '  *  '
-    '  *  '
-*/
-
-console.log(benderaInggris(4)) // invalid input
-
- 
+console.log(soal1(0)) // invalid input
