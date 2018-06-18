@@ -11,25 +11,24 @@
 function addAll(angka)
 {
 
-  var hitung = 0
-  var hasil = 0
-  var median = 0
-  var bagi = 0
-  var tambah = angka.length + 1
-  var kurang = angka.length  
-  if(angka.length % 2 === 0){
-    hitung = angka.length / 2 
-    median = angka[hitung] + angka[hitung-1] 
-    bagi = Math.floor(median / 2)
-    hasil = bagi * tambah
+ var hitung = 0
+ var hasil = 0
+ var median = 0
+ var bagi = 0
+ var tambah = angka.length + 1
+ var kurang = angka.length  
+ if(angka.length % 2 === 0){
+   hitung = angka.length / 2
+   median = angka[hitung] + angka[hitung-1]
+   bagi = median / 2 - 0.5
+   hasil = bagi * tambah - 4
 
-  }else{
-    hitung = Math.round(angka.length / 2 - 1)
-    hasil = angka[hitung] * angka.length
-  }
-  return hasil
+ }else{
+   hitung = angka.length / 2 - 1 + 0.5
+   hasil = angka[hitung] * angka.length
+ }
+ return hasil
 }
-
 
 
 console.log(addAll([1,2,3,4,5]))
