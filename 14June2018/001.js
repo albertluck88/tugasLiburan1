@@ -1,7 +1,9 @@
 function soal1(objList,id,action)
 {
-if(id = 1 && action ="view"){
-    return objList["1"]
+if(action ="view"){
+    return objList[id]
+}else if(action ="delete"){
+    delete objList[id]
 }
 }
 

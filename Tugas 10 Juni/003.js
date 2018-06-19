@@ -21,7 +21,7 @@ function soal3(param)
                 sementara.push(param[l])
             }
         }
-        kumpulanHewan.k= sementara
+        kumpulanHewan[checkDouble[k]] = sementara
     }
 
 
